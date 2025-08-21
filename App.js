@@ -128,7 +128,7 @@ class App extends Component {
               />
             <View>
               <Button
-                tittle='Guardar perfil'
+                title='Guardar perfil'
                 //onPress={} //hace falta crear el metodo de guardar
               />
               <Button
