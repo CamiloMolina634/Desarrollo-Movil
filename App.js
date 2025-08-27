@@ -81,45 +81,45 @@ class App extends Component {
 
     return(
       <>
-        <ScrollView>
+        <ScrollView style={styles.container}>
           <View>
             <Image
-              source={{uri: 'ruta de imagen'}}
-              //style = 'Se crea el estilo'
+              source={{uri: 'https://reactnative.dev/docs/assets/p_cat2.png'}}
+              style = {styles.imagen}
               resizeMode='cover'
             />
             <Text>Mi perfil de usuario</Text>
             <Text>Mi aplicacion demo de rect</Text>
             <View>
-              <Text>Nombre</Text>
+              <Text style={styles.header}>Nombre</Text>
               <TextInput
                 value={nombre}
                 onChangeText={this.manejarCambioNombre}
                 placeholder='Ingresa tu nombre'
                 placeholderTextColor={'#999'}
               />
-              <Text>Apellido</Text>
+              <Text style={styles.header}>Apellido</Text>
               <TextInput
                 value={apellido}
                 onChangeText={this.manejarCambioApellido}
                 placeholder='Ingresa tu apellido'
                 placeholderTextColor={'#999'}
               />
-              <Text>Email</Text>
+              <Text style={styles.header}>Email</Text>
               <TextInput
                 value={email}
                 onChangeText={this.manejarCambioEmail}
                 placeholder='Ingresa tu email'
                 placeholderTextColor={'#999'}
               />
-              <Text>Teléfono</Text>
+              <Text style={styles.header}>Teléfono</Text>
               <TextInput
                 value={telefono}
                 onChangeText={this.manejarCambioTelefono}
                 placeholder='Ingresa tu teléfono'
                 placeholderTextColor={'#999'}
               />
-              <Text>Descripción</Text>
+              <Text style={styles.header}>Descripción</Text>
               <TextInput
                 value={descripcion}
                 onChangeText={this.manejarCambioDescripcion}
@@ -142,5 +142,29 @@ class App extends Component {
       </>
     )
    }
+
+
 }; // esta llave cierra la clase
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor:'#f5f5f5',
+     },
+     header:{
+      backgroundColor:'#3f51',
+      alignItems: 'center',
+      marginBottom: 20,
+      padding: 30,
+     },
+     imagen:{
+      width: 80,
+      height: 80,
+      borderRadius: 40,
+      marginBottom: 15,
+      borderWidth: 3,
+      borderColor: '#fff',
+     },
+  })
+
   export default App;
