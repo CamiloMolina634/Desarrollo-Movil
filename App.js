@@ -82,14 +82,14 @@ class App extends Component {
     return(
       <>
         <ScrollView style={styles.container}>
-          <View>
+          <View style={styles.formulario}>
             <Image
               source={{uri: 'https://reactnative.dev/docs/assets/p_cat2.png'}}
               style = {styles.imagen}
               resizeMode='cover'
             />
-            <Text>Mi perfil de usuario</Text>
-            <Text>Mi aplicacion demo de rect</Text>
+            <Text style={styles.titulo}>Mi perfil de usuario</Text>
+            <Text style={styles.subtitulo}>Mi aplicacion demo de rect</Text>
             <View>
               <Text style={styles.header}>Nombre</Text>
               <TextInput
@@ -97,6 +97,7 @@ class App extends Component {
                 onChangeText={this.manejarCambioNombre}
                 placeholder='Ingresa tu nombre'
                 placeholderTextColor={'#999'}
+                style={styles.input}
               />
               <Text style={styles.header}>Apellido</Text>
               <TextInput
@@ -104,6 +105,7 @@ class App extends Component {
                 onChangeText={this.manejarCambioApellido}
                 placeholder='Ingresa tu apellido'
                 placeholderTextColor={'#999'}
+                style={styles.input}
               />
               <Text style={styles.header}>Email</Text>
               <TextInput
@@ -111,6 +113,7 @@ class App extends Component {
                 onChangeText={this.manejarCambioEmail}
                 placeholder='Ingresa tu email'
                 placeholderTextColor={'#999'}
+                 style={styles.input}
               />
               <Text style={styles.header}>Teléfono</Text>
               <TextInput
@@ -118,6 +121,7 @@ class App extends Component {
                 onChangeText={this.manejarCambioTelefono}
                 placeholder='Ingresa tu teléfono'
                 placeholderTextColor={'#999'}
+                 style={styles.input}
               />
               <Text style={styles.header}>Descripción</Text>
               <TextInput
@@ -125,11 +129,13 @@ class App extends Component {
                 onChangeText={this.manejarCambioDescripcion}
                 placeholder='Ingresa una descripción'
                 placeholderTextColor={'#999'}
+                 style={styles.input}
               />
             <View>
               <Button
                 title='Guardar perfil'
                 //onPress={} //hace falta crear el metodo de guardar
+                
               />
               <Button
                 title='Limpiar campos'
@@ -149,22 +155,49 @@ class App extends Component {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:'#f5f5f5',
+    backgroundColor:'#ffffff',
      },
      header:{
-      backgroundColor:'#3f51',
       alignItems: 'center',
-      marginBottom: 20,
-      padding: 30,
+      marginBottom: 5,
+      padding: 10,
+      
      },
      imagen:{
       width: 80,
       height: 80,
       borderRadius: 40,
-      marginBottom: 15,
+      marginBottom: 5,
       borderWidth: 3,
       borderColor: '#fff',
+      marginTop: 35,
+      marginLeft: 120,
      },
+     input:{
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 8,
+        padding: 10,
+        marginBottom: 5,
+        backgroundColor: '#a0f5f8ff',
+      },
+      titulo:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        textAlign: 'center',
+        color: '#333'
+      },
+    subtitulo:{
+        fontSize: 16,
+        color: '#666',
+        marginBottom: 20,
+         textAlign: 'center'
+      },
+      formulario:{
+        paddingHorizontal: 20,
+      },
+
   })
 
   export default App;
