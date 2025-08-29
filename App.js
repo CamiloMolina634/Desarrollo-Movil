@@ -59,12 +59,44 @@ class App extends Component {
     });
   };
 
+  guardarPerfil =()=>{
+    const { nombre, apellido, email, telefono, descripcion } = this.state;
+    //Validar que los campos onligatorios no esten vacios
+    // nombre, apellido, email
+    if(nombre.trim() || !apellido.trim() || !email.trim()){
+      Alert.alert(
+        'Campos vacios',
+        'Los campos ',
+        [{ text: 'OK' }]
+      );
+      return;
+
+      //Validar el correo
+      if(!email.includes('@')){
+        Alert.alert(
+          'Email invalido',
+          'Por favor, ingresa un email válido.'
+          [{ text: 'OK' }]
+        );
+        return;
+      };
+      this.setState({
+        mostrarPerfil: true
+      });
+    }
+    Alert.alert(
+      'Perfil guardado',
+      'Tu perfil ha sido guardado con éxito.',
+      [{ text: 'OK' }]
+    );
+  }
+
     limpiarFormulario = () =>{
       this.setState ({
       nombre: '',
       apellido: '',
       email: '',
-      telefono: '',
+      telefono: '', 
       descripcion: '',
       mostrarPerfil: false,
       mensajeAprobacion: "Perfil creado con exitoLimpiar campos"
@@ -134,7 +166,7 @@ class App extends Component {
             <View>
               <Button
                 title='Guardar perfil'
-                //onPress={} //hace falta crear el metodo de guardar
+                onPress={this.guardarPerfil} 
                 
               />
               <Button
